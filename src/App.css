@@ -74,6 +74,11 @@ h1 {
   cursor: pointer;
 }
 
+.img_btn{
+  background-color: transparent;
+}
+
+
 /* .search button {
   padding: 20px 40px;
   border-radius: 0.5rem;
@@ -191,6 +196,7 @@ h1 {
   opacity: 1;
 }
 
+
 @media screen and (max-width: 600px) {
   .app {
     padding: 4rem 2rem;
@@ -228,4 +234,24 @@ h1 {
     width: "100%";
     margin: 1rem;
   }
+}
+
+.return__btn{
+  width: 180px;
+  height: 40px;
+  position: fixed;
+  left: 10px;
+  top: 30px;
+  
+  border-radius: 10px;
+  background-color: #a1a1a1;
+  border: 2px solid white;
+  
+  z-index: 3;
+}
+.return__a{
+  color: #f0f0f0;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
 }

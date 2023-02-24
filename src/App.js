@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import './App.css'
 import searchIcon from './search.svg'
 import MovieCard from "./MovieCard";
+import ReturnButton from "./ReturnButton";
 
 function App() {
   const url = 'https://www.omdbapi.com/?i=tt3896198&apikey=2f7165ec'
@@ -18,12 +19,23 @@ function App() {
     searchMovies('Matrix')
   }, [])
 
+  const enterHandler = (event) => {
+    if(event.key === 'Enter'){
+      searchMovies(searchTerm)
+      console.log('działa')
+    }
+  }
+ 
+
   return (
     <div className="app">
+      <ReturnButton/>
       <h1>Movie Data Base</h1>
       <div className="search">
-        <input placeholder="search for movies" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
-        <img src={searchIcon} alt='search' onClick={() => searchMovies(searchTerm)} />
+        <input placeholder="search for movies" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} onKeyDown={enterHandler}/>
+        <button className="img_btn"  onClick={() => searchMovies(searchTerm)} >        
+        <img src={searchIcon} alt='search' />
+        </button>
       </div>
 
       {movies?.length > 0
